@@ -3,13 +3,17 @@ import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
 import { Dropdown } from "primereact/dropdown";
 import { useState } from "react";
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import { InputText } from "primereact/inputtext";
 
 export default function Footer() {
   const [selectedCity, setSelectedCity] = useState<any>(null);
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data:any) => console.log(data);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data: any) => console.log(data);
   const cities = [
     { name: "New York", code: "NY" },
     { name: "Rome", code: "RM" },
@@ -69,12 +73,26 @@ export default function Footer() {
         }}
         footer={footerContent}
       >
-      <form onSubmit={handleSubmit(onSubmit)}>
-      <InputText  type="text" placeholder="Etkinlik Adı" {...register("Etkinlik Adı", {})} />
-      <InputText type="datetime-local" placeholder="Etkinlik Zamanı" {...register("Etkinlik Zamanı", {})} />
-      <InputText {...register("Etkinlik Açıklaması", {})} />
-     
-    </form>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex justify-content-center">
+            <InputText
+              type="text"
+              placeholder="Etkinlik Adı"
+              {...register("Etkinlik Adı", {})}
+            />
+          </div>
+          <div className="flex justify-content-center mt-3">
+            <InputText
+              type="datetime-local"
+              placeholder="Etkinlik Zamanı"
+              {...register("Etkinlik Zamanı", {})}
+            />
+          </div>
+          <div className="flex justify-content-center mt-3">
+
+            <InputText type="text" placeholder="Etkinlik Açıklaması" {...register("Etkinlik Açıklaması", {})} />
+          </div>
+        </form>
       </Dialog>
     </footer>
   );
