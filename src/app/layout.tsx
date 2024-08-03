@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import "/node_modules/primeflex/primeflex.css"
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "primeicons/primeicons.css";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <
+        <Navbar/>
         <main>{children}</main>
         <Footer/>
       </body>
