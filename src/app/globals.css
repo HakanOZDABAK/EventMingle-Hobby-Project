@@ -1,0 +1,22 @@
+/* globals.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  padding: 1rem 0;
+  background: #f1f1f1;
+}
